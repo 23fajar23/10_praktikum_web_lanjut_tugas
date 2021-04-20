@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Kelas;
 use App\Models\mahasiswa_matakuliah;
 use App\Models\matakuliah;
-
+use Illuminate\Support\Facades\Storage;
 class MahasiswaController extends Controller
 {
     /**
@@ -55,8 +55,13 @@ class MahasiswaController extends Controller
                 'No_Handphone' => 'required',
                 'E_Mail' => 'required',
                 'TglLahir' => 'required',
+                'Image' => 'required',
             ]);
-            
+
+            if ($request->file('Image')) {
+                $image_name = $request->file('Image')->store('images','public');
+            }
+
             $mahasiswa = new Mahasiswa;
             $mahasiswa->nim = $request->get('Nim');
             $mahasiswa->nama = $request->get('Nama');
@@ -64,7 +69,7 @@ class MahasiswaController extends Controller
             $mahasiswa->no_handphone = $request->get('No_Handphone');
             $mahasiswa->e_mail = $request->get('E_Mail');
             $mahasiswa->tgllahir = $request->get('TglLahir');
-            
+            $mahasiswa->image = $image_name;
             $kelas = new Kelas;
             $kelas->id = $request->get('Kelas');
 
@@ -122,6 +127,7 @@ class MahasiswaController extends Controller
                 'No_Handphone' => 'required',
                 'E_Mail' => 'required',
                 'TglLahir' => 'required',
+                'Image' => 'required',
                 ]);
             
             $mahasiswa = Mahasiswa::with('kelas')->where('nim', $Nim)->first();
@@ -132,6 +138,13 @@ class MahasiswaController extends Controller
             $mahasiswa->e_mail = $request->get('E_Mail');
             $mahasiswa->tgllahir = $request->get('TglLahir');
             
+            if ($mahasiswa->image && file_exists(storage_path('app/public/' . $mahasiswa->image))) {
+                Storage::delete('public/' . $mahasiswa->image);
+            }
+    
+            $image_name = $request->file('Image')->store('images','public');
+            $mahasiswa->image = $image_name;
+
             $kelas = new Kelas;
             $kelas->id = $request->get('Kelas');
 
