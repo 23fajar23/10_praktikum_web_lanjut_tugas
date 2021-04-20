@@ -22,7 +22,8 @@ class mahasiswa extends Seeder
                 'no_handphone' => '089697134531',
                 'e_mail' => 'fajardarussalam24@gmail.com',
                 'tgllahir' => 20010401,
-                'kelas' => 'TI-2I',
+                'kelas_id' => 9,
+                'image' => '',
                 
             ],
             [
@@ -32,8 +33,8 @@ class mahasiswa extends Seeder
                 'no_handphone' => '089676872653',
                 'e_mail' => 'salma@gmail.com',
                 'tgllahir' => 19990904,
-                'kelas' => 'TI-2I',
-                
+                'kelas_id' => 9,
+                'image' => '',
             ],
             [
                 'nim' => '2031710025',
@@ -42,8 +43,8 @@ class mahasiswa extends Seeder
                 'no_handphone' => '089987610298',
                 'e_mail' => 'melisa@gmail.com',
                 'tgllahir' => 20020105,
-                'kelas' => 'TI-2I',
-                
+                'kelas_id' => 9,
+                'image' => '',
             ],
             [
                 'nim' => '2031710053',
@@ -52,8 +53,8 @@ class mahasiswa extends Seeder
                 'no_handphone' => '089527547723',
                 'e_mail' => 'elisa@gmail.com',
                 'tgllahir' => 20020218,
-                'kelas' => 'TI-2I',
-                
+                'kelas_id' => 9,
+                'image' => '',
             ],
             [
                 'nim' => '2031710102',
@@ -62,8 +63,8 @@ class mahasiswa extends Seeder
                 'no_handphone' => '089527547723',
                 'e_mail' => 'hafiszl@gmail.com',
                 'tgllahir' => 20020101,
-                'kelas' => 'TI-2I',
-                
+                'kelas_id' => 9,
+                'image' => '',
             ],
             [
                 'nim' => '2041720003',
@@ -72,8 +73,8 @@ class mahasiswa extends Seeder
                 'no_handphone' => '089374628364',
                 'e_mail' => 'pepsi@gmail.com',
                 'tgllahir' => 20030102,
-                'kelas' => 'TI-2I',
-                
+                'kelas_id' => 9,
+                'image' => '',
             ],
             [
                 'nim' => '1941720044',
@@ -82,8 +83,8 @@ class mahasiswa extends Seeder
                 'no_handphone' => '089765241826',
                 'e_mail' => 'jafra@gmail.com',
                 'tgllahir' => 20020102,
-                'kelas' => 'TI-2I',
-                
+                'kelas_id' => 9,
+                'image' => '',
             ],
         ];
 
